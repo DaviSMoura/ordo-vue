@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/language-plugin-pug": "^1.8.8",
     "unplugin-vue-components": "^0.25.1",
     "unplugin-vue-router": "^0.6.4",
     "vite": "^4.4.5"
