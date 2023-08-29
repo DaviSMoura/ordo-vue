@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { SmileOutlined } from '@ant-design/icons-vue';
 
 const router = useRouter()
 const route = useRoute();
@@ -22,16 +23,20 @@ const menuItems = computed(() => {
     label: route.meta.title,
   }));
 })
+
+const breadcrumbs = computed(() => {
+  return ['Páginas', route.meta.title]
+})
 </script>
 
 <template lang="pug">
 a-layout.layout
   a-layout-header(:style="{ position: 'fixed', zIndex: 1, width: '100%' }")
-    .logo
+    smile-outlined.logo
     a-menu(v-model:selected-keys="current" theme="dark" mode="horizontal" :style="{ lineHeight: '64px' }" :items="menuItems")
   a-layout-content(style="padding: 0 50px; margin-top: 64px")
     a-breadcrumb(style="margin: 16px 0")
-      a-breadcrumb-item Início
+      a-breadcrumb-item(v-for="bread of breadcrumbs") {{ bread }}
     div(:style="{ background: '#fff', padding: '24px', minHeight: '280px' }")
       router-view
   a-layout-footer(style="text-align: center")
@@ -46,10 +51,11 @@ a-layout.layout
 }
 .logo {
   float: left;
-  width: 120px;
+  color: #fff;
+  font-size: 30px;
+  width: 31px;
   height: 31px;
   margin: 16px 24px 16px 0;
-  background: rgba(255, 255, 255, 0.3);
 }
 
 [data-theme="dark"] .site-layout-content {
