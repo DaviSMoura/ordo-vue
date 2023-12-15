@@ -30,7 +30,7 @@ const breadcrumbs = computed(() => {
 </script>
 
 <template lang="pug">
-a-layout.layout
+a-layout.layout(:style="{ minHeight: '100vh' }")
   a-layout-header(:style="{ position: 'fixed', zIndex: 1, width: '100%' }")
     smile-outlined.logo
     a-menu(v-model:selected-keys="current" theme="dark" mode="horizontal" :style="{ lineHeight: '64px' }" :items="menuItems")
