@@ -34,7 +34,7 @@ a-layout.layout(:style="{ minHeight: '100vh' }")
   a-layout-header(:style="{ position: 'fixed', zIndex: 1, width: '100%' }")
     smile-outlined.logo
     a-menu(v-model:selected-keys="current" theme="dark" mode="horizontal" :style="{ lineHeight: '64px' }" :items="menuItems")
-  a-layout-content(style="padding: 0 50px; margin-top: 64px")
+  a-layout-content(style="padding: 0 20px; margin-top: 64px")
     a-breadcrumb(style="margin: 16px 0")
       a-breadcrumb-item(v-for="bread of breadcrumbs") {{ bread }}
     div(:style="{ background: '#fff', padding: '24px', minHeight: '280px' }")
