@@ -13,7 +13,7 @@ const data = computed(() => {
       id: item.id,
       name: item.name,
       url: item.url,
-      hits: item.acesses,
+      hits: item.hits,
       item
     }
   })
