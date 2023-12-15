@@ -92,7 +92,7 @@ a-card
   template(#title) Links curtos
   template(#extra)
     a-button(type="primary" :icon="h(PlusOutlined)" @click.stop="createNew") Novo
-  a-table(:dataSource="data" :columns="columns" :loading="loading" rowKey="id")
+  a-table(:dataSource="data" :columns="columns" :loading="loading" rowKey="id" :scroll="{ x: true }")
     template(#bodyCell="{ column, text }")
       template(v-if="column.key === 'action'")
         a-button-group
